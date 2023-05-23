@@ -1,0 +1,29 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.category {    
+    &__card {
+      padding: 14px 16px 12px;
+      background: transparent;
+      border: 1px solid $border-card;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        background: $bg-card-hover;
+      }
+      &:active {
+        background: $bgbusket;
+        outline: 2px solid $border-card;
+      }
+    }  
+    &__title {
+      @include text($ff, 700, 13px, 18px, $text-card);
+      letter-spacing: 0.1px;
+    }
+  }
+  
