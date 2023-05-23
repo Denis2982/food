@@ -1,8 +1,13 @@
-import React from 'react'
+import '../scss/home.scss';
+import HotList from './components/Hot/HotList/HotList';
+
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div className="container home">
+      <HotList />
+      
+    </div>
   )
 }
 

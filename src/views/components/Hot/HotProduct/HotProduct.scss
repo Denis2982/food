@@ -1,0 +1,39 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.hot-item {
+  display: flex;
+  gap: 16px;
+  background: $bgHotItem1;
+  border-radius: 16px;
+  &:nth-child(2n) {
+    background: $bgHotItem2;
+    .hot-item__discont {
+        color: $text-descont2;
+    }
+  }
+  &__img {
+    display: flex;
+  }
+
+  &__info {
+    padding: 24px;
+  }
+
+  &__title {
+    @include text($ff, 600, 20px, 28px, $text);
+    letter-spacing: 0.1px;
+    margin-bottom: 8px;
+  }
+
+  &__discont {
+    @include text($ff, 800, 40px, 56px, $text-descont1);
+    letter-spacing: 0.1px;
+    margin-bottom: 36px;
+  }
+
+  &__desc {
+    @include text($ff, 400, 14px, 20px, $text-grey);
+    letter-spacing: 0.1px;
+  }
+}
