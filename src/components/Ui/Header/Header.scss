@@ -1,0 +1,82 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.header {
+  border-bottom: 1px solid $bginput;
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+  }
+  &__logo {
+    margin-right: 48px;
+  }
+  &__search {
+    margin-right: auto;
+  }
+  &__list {
+    margin-left: auto;
+    display: flex;
+  }
+  &__list-link {
+    @include text($ff, 700, 14px, 20px, $text);
+    letter-spacing: 0.1px;
+    margin-right: 28px;
+    &:last-child {
+      margin-right: 0;
+      margin-left: 12px;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 32px;
+        background: $bginput;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -20px;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 24px;
+  }
+  &__busket {
+    width: 48px;
+    height: 48px;
+    background: $bgbusket;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__busket-counter {
+    position: absolute;
+    background: $bgcounter;
+    border-radius: 8px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include text($ff, 700, 10px, 14px, $white);
+    top: -4px;
+    right: -4px;
+  }
+  &__profile {
+    border: 2px solid $bginput;
+    border-radius: 16px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
