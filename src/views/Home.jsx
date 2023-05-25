@@ -9,8 +9,7 @@ export default function Home() {
     <div className="container home">
       <HotList />
       <Category />
-      <RestaurantList />
-      
+      <RestaurantList />      
     </div>
   )
 }

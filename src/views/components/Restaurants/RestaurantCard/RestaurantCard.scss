@@ -1,46 +1,106 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
 .restaurant {
-    &__card {
-    //   display: flex;
-    //   flex-direction: column;
-      border: 1px solid #edeef2;
-      border-radius: 16px;
-    }
-  
-    &__img {
-        img{
-            object-fit: cover;
-        }
-    }
-  
-    &__top-desc {
-    }
-  
-    &__title {
-      font-family: "Nunito";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 24px;  
-      letter-spacing: 0.1px;    
-      color: #2b2b43;
-    }
-  
-    &__busket {
-    }
-  
-    &__busket-count {
-    }
-  
-    &__desc {
-    }
-  
-    &__desc-time {
-    }
-  
-    &__desc-sum {
-    }
-  
-    &__category {
+  &__card {
+    border: 1px solid $bginput;
+    border-radius: 16px;
+  }
+
+  &__img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;    
+    display: flex;
+    & img {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      width: 100%;
+      
     }
   }
-  
+
+  &__inner {
+    padding: 16px;
+  }
+
+  &__top-desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include text($ff, 700, 18px, 24px, $text);
+    letter-spacing: 0.1px;
+  }
+
+  &__busket {
+    svg {
+      path {
+        stroke: #c7c8d2;
+      }
+    }
+  }
+
+  &__desc {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    margin-bottom: 14px;
+  }
+
+  &__desc-time {
+    display: flex;
+    align-items: center;
+    img {
+      padding-right: 6px;
+    }
+    span {
+      @include text($ff, 600, 12px, 16px, $text-grey);
+    }
+  }
+
+  &__desc-sum {
+    @include text($ff, 600, 12px, 16px, $text-grey);
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: $bgcounter;
+      border-radius: 50%;
+      left: -11px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__category-list{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: $bginput;
+    border-radius: 100px;
+    padding: 4px 10px;
+    max-width: 70px;
+  }
+
+  &__category-img {
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__category-title {
+    @include text($ff, 600, 12px, 16px, $text-card);
+  }
+}

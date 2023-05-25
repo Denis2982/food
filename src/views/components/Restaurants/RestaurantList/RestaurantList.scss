@@ -1,5 +1,16 @@
-.restaurant__list {
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.restaurant {
+  &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
+    margin-bottom: 30px;
+  }
+  &__list-title {
+    @include text($ff, 600, 20px, 28px, $text);
+    letter-spacing: 0.1px;
+    margin-bottom: 16px;
+  }
 }
