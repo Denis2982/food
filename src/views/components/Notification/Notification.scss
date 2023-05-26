@@ -1,0 +1,31 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.notification {
+
+    &__title {
+        @include text ($ff, 700, 18px, 24px, $text);
+        letter-spacing: 0.1px;
+        margin-bottom: 16px;
+    }
+
+    &__checkbox-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 16px;
+        row-gap: 24px;
+        position: relative;
+        margin-bottom: 56px;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: calc(100% + 32px);
+            height: 1px;
+            background: $bginput;
+            bottom: -36px;
+            left: -16px;
+
+        }
+    }
+}

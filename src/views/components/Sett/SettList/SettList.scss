@@ -1,0 +1,21 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.setting {
+
+    &__list {
+        min-width: 350px;
+    }
+
+    &__list-title {
+        @include text($ff, 600, 20px, 28px, $text);
+        letter-spacing: 0.1px;
+        margin-bottom: 16px;
+    }
+
+    &__list-cards{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}

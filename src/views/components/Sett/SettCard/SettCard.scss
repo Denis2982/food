@@ -1,0 +1,43 @@
+@import "src/scss/vars";
+@import "src/scss/mixins";
+
+.setting-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid $bginput;
+  border-radius: 16px;
+  transition: $transition;
+  &:hover {
+    background: #F3F4FF;
+    border: 1px solid #4E60FF;
+  }
+  &:hover .setting-card__img {
+    background: #4E60FF;
+  }
+  &:hover  svg path {
+    stroke: $white;
+  }
+  &__img {
+    background: #EDEEF2;
+    border-radius: 12px;
+    padding: 10px;
+    transition: $transition;
+    & svg path{
+        transition: $transition;
+    }
+  }
+
+  &__title {
+    @include text($ff, 700, 14px, 20px, $text);
+    letter-spacing: 0.1px;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    @include text($ff, 400, 13px, 18px, $text-card);
+    letter-spacing: 0.2px;
+  }
+}
+
